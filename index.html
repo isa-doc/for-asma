@@ -25,10 +25,10 @@ body{
 
 
 .container{
-    width:90%;
-    max-width:500px;
-    margin:auto;
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
 }
 
 h1{
@@ -116,16 +116,10 @@ button:hover{
 }
 
 .letter{
+    .letter{
     display:none;
-    margin-bottom:50px;
-    margin-top:35px;
-    padding:35px 30px;
-    background:white;
-    border-radius:25px;
-    border:1px solid #eee;
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
-    line-height:1.8;
-    animation:fadeIn 3s ease;
+    width:100%;
+    margin-top:40px;
 }
 
 
@@ -302,6 +296,15 @@ Our Memories ❤️
 function openGift(){
 
 document.querySelector(".gift").style.display="block";
+
+setTimeout(()=>{
+
+document.querySelector(".gift").scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+},300);
 
 }
 
