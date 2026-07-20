@@ -242,7 +242,55 @@ h1{
     to{
         opacity:1;
     }
-}    
+}
+.surprise{
+    margin-top:30px;
+    text-align:center;
+}
+
+.gift{
+    font-size:55px;
+    cursor:pointer;
+    animation:giftShake 2s infinite;
+}
+
+@keyframes giftShake{
+    0%,100%{
+        transform:rotate(0);
+    }
+
+    25%{
+        transform:rotate(-10deg);
+    }
+
+    75%{
+        transform:rotate(10deg);
+    }
+}
+
+
+.hidden-message{
+    display:none;
+    margin-top:20px;
+    background:rgba(255,255,255,0.15);
+    padding:20px;
+    border-radius:20px;
+    font-size:20px;
+    animation:showMessage 1s ease;
+}
+
+
+@keyframes showMessage{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
 </style>
 
 </head>
@@ -310,7 +358,22 @@ Loading...
 </div>
 
 
+<div class="surprise">
 
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<div class="hidden-message" id="giftMessage">
+
+A little surprise for you ❤️
+<br><br>
+No matter where life takes us,
+I will always choose you.
+
+</div>
+
+</div>
 <div class="footer">
 Forever and always... 🌙
 </div>
@@ -326,7 +389,11 @@ Forever and always... 🌙
 
 
 let targetDate = new Date("November 12, 2026 00:00:00").getTime();
+function openGift(){
 
+document.getElementById("giftMessage").style.display="block";
+
+}
 
 
 setInterval(function(){
