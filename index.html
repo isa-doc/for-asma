@@ -231,8 +231,189 @@ document.querySelector(".gift-area").style.display="none";
 document.getElementById("letter").classList.remove("hidden");
 
 }
+// mektup içeriği
+
+document.getElementById("letter").innerHTML = `
+
+<div class="letter-box">
+
+<h2>💌 My Love</h2>
+
+<p>
+Every moment with you is a beautiful gift.
+<br><br>
+I can't wait for the day we start our new journey together.
+<br><br>
+With love,
+<br>
+<strong>Issa ❤️</strong>
+</p>
 
 
+<div class="count-title">
+Our special day is coming...
+</div>
+
+
+<div id="countdown">
+
+
+<div class="count">
+<span id="days">0</span>
+Days
+</div>
+
+
+<div class="count">
+<span id="hours">0</span>
+Hours
+</div>
+
+
+<div class="count">
+<span id="minutes">0</span>
+Minutes
+</div>
+
+
+<div class="count">
+<span id="seconds">0</span>
+Seconds
+</div>
+
+
+</div>
+
+
+</div>
+
+`;
+
+
+
+// geri sayım
+
+const target = new Date("November 12, 2026 00:00:00").getTime();
+
+
+setInterval(()=>{
+
+
+const now = new Date().getTime();
+
+const distance = target - now;
+
+
+const days = Math.floor(distance/(1000*60*60*24));
+
+const hours = Math.floor(
+(distance%(1000*60*60*24))/(1000*60*60)
+);
+
+
+const minutes = Math.floor(
+(distance%(1000*60*60))/(1000*60)
+);
+
+
+const seconds = Math.floor(
+(distance%(1000*60))/1000
+);
+
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours;
+
+document.getElementById("minutes").innerHTML=minutes;
+
+document.getElementById("seconds").innerHTML=seconds;
+
+
+},1000);
+.letter-box{
+
+background:rgba(255,255,255,.95);
+color:#8b1e3f;
+padding:30px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+animation:showLetter 1s ease;
+
+}
+
+
+.letter-box h2{
+
+font-size:35px;
+margin-bottom:20px;
+
+}
+
+
+.letter-box p{
+
+font-size:18px;
+line-height:1.7;
+
+}
+
+
+@keyframes showLetter{
+
+from{
+transform:scale(0);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+
+
+.count-title{
+
+margin-top:25px;
+font-size:20px;
+
+}
+
+
+
+#countdown{
+
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+flex-wrap:wrap;
+
+}
+
+
+
+.count{
+
+background:#ff8fab;
+color:white;
+padding:12px;
+border-radius:15px;
+min-width:70px;
+
+}
+
+
+.count span{
+
+display:block;
+font-size:25px;
+font-weight:bold;
+
+}
 </script>
 
 
