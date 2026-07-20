@@ -29,7 +29,6 @@ body{
     flex-direction:column;
     align-items:center;
 }
-}
 
 h1{
     font-size:48px;
@@ -116,12 +115,16 @@ button:hover{
 }
 
 .letter{
-    .letter{
     display:none;
-    width:100%;
-    margin-top:40px;
+    width:90%;
+    max-width:500px;
+    margin:40px auto 0;
+    padding:30px;
+    background:white;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    animation:fadeIn 0.8s ease;
 }
-
 
 .letter h2{
     font-size:32px;
@@ -212,17 +215,6 @@ to{
 </style>
 
 </head>
-
-<div class="gift" onclick="showLetter()">
-
-<div class="box">
-<div class="lid"></div>
-<div class="ribbon"></div>
-</div>
-
-<p>Tap the gift 🎁</p>
-
-</div>
 
 
 <div class="letter">
@@ -344,7 +336,16 @@ Our story continues...
 <button onclick="openGift()">
 Open
 </button>
+<div class="gift" onclick="showLetter()">
 
+<div class="box">
+<div class="lid"></div>
+<div class="ribbon"></div>
+</div>
+
+<p>Tap the gift 🎁</p>
+
+</div>
 
 </div>
 
