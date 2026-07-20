@@ -62,7 +62,21 @@ body{
 h1{
     font-size:45px;
     margin-bottom:15px;
-    animation:fade 3s;
+    text-shadow:0 0 20px rgba(255,255,255,0.8);
+    animation:titleGlow 3s infinite alternate;
+}
+
+
+@keyframes titleGlow{
+
+    from{
+        text-shadow:0 0 10px white;
+    }
+
+    to{
+        text-shadow:0 0 30px pink;
+    }
+
 }
 
 
@@ -182,6 +196,24 @@ h1{
         opacity:1;
         transform:translateY(0);
     }
+} 
+.container{
+    animation:fadeIn 2s ease;
+}
+
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }    
 </style>
 
