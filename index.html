@@ -72,12 +72,96 @@ button:hover{
     opacity:.8;
 }
 
+.gift{
+    display:none;
+    margin-top:40px;
+    cursor:pointer;
+}
 
+.box{
+    width:140px;
+    height:100px;
+    background:#111;
+    margin:auto;
+    border-radius:10px;
+    position:relative;
+}
+
+.lid{
+    width:150px;
+    height:25px;
+    background:#333;
+    position:absolute;
+    top:-20px;
+    left:-5px;
+    border-radius:8px;
+}
+
+.ribbon{
+    width:15px;
+    height:100px;
+    background:white;
+    position:absolute;
+    left:62px;
+}
+
+.letter{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    border:1px solid #ddd;
+    border-radius:20px;
+    line-height:1.7;
+}
 </style>
 
 </head>
 
+<div class="gift" onclick="showLetter()">
 
+<div class="box">
+<div class="lid"></div>
+<div class="ribbon"></div>
+</div>
+
+<p>Tap the gift 🎁</p>
+
+</div>
+
+
+<div class="letter">
+
+<h2>My Love ❤️</h2>
+
+<p>
+Every moment with you is a beautiful blessing.
+<br><br>
+I can't wait for the day we start our journey together.
+<br><br>
+With love,
+<br>
+Issa
+</p>
+
+</div>
+
+
+<script>
+
+function openGift(){
+
+document.querySelector(".gift").style.display="block";
+
+}
+
+
+function showLetter(){
+
+document.querySelector(".letter").style.display="block";
+
+}
+
+</script>
 <body>
 
 
@@ -103,7 +187,7 @@ Our story continues...
 </p>
 
 
-<button>
+<button onclick="openGift()">
 Open
 </button>
 
